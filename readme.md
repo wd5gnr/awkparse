@@ -27,3 +27,5 @@ Public domain by Al Williams @ Hackaday
 2. Can make a "remainder" field with "(.*)$" at the end of pattern
 3. Note that nested parenthesis work. Number of field is the count of open parentheis characters (e.g., field 1 above is the entire phone number, but field 2 is the area code).
 4. Don't forget spaces if you want them. For example: "^[[:space:]]*(([0-9]{3}..."
+5. You can use FPAT to split a line into fields using multiple regex repeated over and over. This library lets you totally define the entire line using multiple seperator characters. For example: ^([a-zA-z]{1,3})(0-9]*)$ would pick up a field with 1-3 alpha characters and another with any number of digits following.
+6. Requires gawk (not awk, mawk, etc.) due to extensions to match()
